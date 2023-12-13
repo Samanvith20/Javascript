@@ -20,3 +20,7 @@ const  myname2="     Samanvith      "
 const url="https://www.google.com"
 //console.log(url.replace('https','http'))-->http://www.google.com
 //console.log(myname.split(' '))->  ["Samanvith", "Reddy"]
+// adding two strings[concatenation]
+const firstname="Samanvith"
+const lastname="Reddy"
+console.log(`My name is ${firstname} ${lastname}`);
