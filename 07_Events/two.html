@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>my name is Samanvith</h1>
+    <button id="stop">Stop</button>
+    <script>
+        const functionchange = () => {
+            document.querySelector('h1').innerHTML = "my name is Samanvith Reddy";
+        };
+
+        const mynamechange = setTimeout(functionchange, 2000);
+        // setTimeout is used to delay the execution of the function by 2 seconds
+
+        const stop = document.getElementById('stop').addEventListener('click', function () {
+            clearTimeout(mynamechange);
+            // clearTimeout is used to stop the execution of the function
+        });
+    </script>
+</body>
+</html>
+ Differnces between  clearInterval,clearTimeout :
+ Usage with setInterval and setInterval:
+
+ clearInterval: Used to stop the execution of a function that was scheduled to run at regular intervals with setInterval.
+ clearTimeout: Used to cancel the execution of a function that was scheduled to run once after a specified delay with setTimeout.
+ Use Cases:
+
+clearInterval: Useful when you want to stop a function from being executed repeatedly at fixed intervals.
+clearTimeout: Useful when you want to cancel the execution of a function after a specific delay.

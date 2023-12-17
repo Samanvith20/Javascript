@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Learning Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        const header = document.querySelector('h1');
+        let intervalId;
+
+        function changeHeader() {
+            header.textContent = `Learning Javascript - ${new Date().toLocaleTimeString()}`;
+        }
+
+        document.getElementById('start').addEventListener('click', function () {
+            intervalId = setInterval(changeHeader, 1000);
+        });
+        // setInterval is used to execute the function every 1 second repeatedly
+
+        document.getElementById('stop').addEventListener('click', function () {
+            clearInterval(intervalId);
+            // clearInterval is used to stop the execution of the function
+        });
+    </script>
+</body>
+</html>

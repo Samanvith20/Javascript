@@ -1,0 +1,110 @@
+//Events
+// events are  actions or occurrences that happen in the browser, such as a user clicking a button, resizing the window, or submitting a form
+//Event Listener: An event listener is a piece of code that "listens" for a specific event to occur.
+//Callback Function: The code that gets executed when an event occurs is often called a "callback function
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Example</title>
+</head>
+<body>
+
+  <button id="myButton">Click me!</button>
+
+  <script>
+    // Get the button element
+    var myButton = document.getElementById('myButton');
+
+    // Add an event listener for the 'click' event
+    myButton.addEventListener('click', function() {
+      // This code will run when the button is clicked
+      alert('Button clicked!');
+    });
+  </script>
+
+</body>
+</html>
+ Event Types:
+
+ Click Event: Triggered when a mouse button is clicked.
+Key Events: Triggered when a key is pressed or released.
+Mouse Events: Include events like mouseover, mouseout, mousemove, etc.
+Form Events: Events related to HTML form elements, like submit and change.
+
+
+
+Event Handlers:
+A function or a piece of code that specifies how the program should respond when a particular event occurs.
+addEventListener: A method used to attach an event listener to an element. It takes the event type and a callback function as parameters
+Example:
+element.addEventListener('click', function() {
+    // Your code here
+  });
+
+
+Event object: The event object in JavaScript is automatically generated when an event occurs and is passed to the event handler.
+element.addEventListener('click', function(event) {
+    // Access event properties, e.g., event.target
+  });
+  
+
+  Removing Event Listeners:
+It's important to remove event listeners when they are no longer needed to avoid memory leaks.
+example:
+var myButton = document.getElementById('myButton');
+myButton.addEventListener('click', function() {
+  alert('Button clicked!');
+  myButton.removeEventListener('click', function() {
+    alert('Button clicked!');
+  });
+});
+Event Bubbling and Capturing:
+Eveent Bubbling: from low to high (The event starts from the target element and moves outward towards the outermost ancestor.)
+Capturing Phase: The event starts from the outermost ancestor and moves towards the target element.[high to low]
+we can stop the any event with stopPropagation() method.
+example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    
+
+     // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+
+
+
+    //Preventing Default Behavior: it is used to prevent the default behavior of the element.
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     console.log("google clicked");})
+   
+  // event target: This is the element that triggered the event. It could be any HTML element, like a button, input field, or div.
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log(e.target);
+    // }, false)
