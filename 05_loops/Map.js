@@ -1,5 +1,7 @@
 //map
-// The map() method of Array instances creates a new array populated with the results of calling a provided function on every element in the calling array
+// It is used to create a new array by applying a provided function to each element of the original array
+// syntax
+// const newarray=arr.map(callback(currentvalue,index,array)=>{}
    const arr=[1,2,3,4,5]
    arr.map((item)=>{
      return item*2
