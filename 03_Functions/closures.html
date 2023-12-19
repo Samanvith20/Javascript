@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>Explaining closures with an example</title>
+</head>
+<body>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+
+<script>
+    //    document.querySelector('#start').addEventListener('click', function(){
+//        console.log("start button clicked");
+//    })
+//     document.querySelector('#stop').addEventListener('click', function(){
+//          console.log("stop button clicked");
+//     })
+  // Here the problem is that we are repeating the same code again and again. So we can use closures to solve this problem.
+   function handleClick(buttonId) {
+     return function() {
+         document.querySelector(`#${buttonId}`).addEventListener('click', function(){
+             console.log(buttonId + " button clicked");
+         })
+     }
+   }
+
+   // Create event handlers for start and stop buttons using closures
+   const startHandler = handleClick('start');
+   const stopHandler = handleClick('stop');
+
+   // Add event listeners using the created handlers
+   startHandler();
+   stopHandler();
+</script>
+</html>
