@@ -48,6 +48,7 @@ const getcompchoice = () => {
     const options = ["rock", "paper", "scissor"];
     const randomnum = Math.floor(Math.random() * 3);
     return options[randomnum];
+    
 };
 
 const Draw = () => {
